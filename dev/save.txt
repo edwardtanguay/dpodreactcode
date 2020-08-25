@@ -1,0 +1,169 @@
+
+//const SiteGenerator = require('../classes/SiteGenerator').default;
+
+
+
+===================
+
+console.log('ok333');
+
+
+//console.log('ts works');
+
+
+
+// function hello(person: string) {
+// 	return `hello, ${person}.`;
+// }
+
+// let test: string = qstr.capitalizeFirstLetter('nnn');
+
+//let user: string = "James Russel";
+//let message = 'okok';
+//console.log(qstr.capitalizeFirstLetter(message) + ', it works.');
+
+
+
+console.log('ok111');
+
+const testfunc = (name: string = '') => {
+	return 'ok222 ok ' + name;
+};
+console.log(testfunc("test"));
+
+
+
+===================
+
+
+
+export const getSitePathAndFileNames2 = (absoluteDirectory: string = '', pathAndFileNamesOriginal: string[] = []) => {
+	absoluteDirectory = absoluteDirectory || qsys.getApplicationBaseDirectory();
+	const pathAndFileNames: string[] = pathAndFileNamesOriginal || [];
+
+	const files = fs.readdirSync(absoluteDirectory);
+	for (const file of files) {
+		let absolutePathAndFileName = `${absoluteDirectory}\\${file}`;
+		if (!qstr.endsWith(absolutePathAndFileName, '\\node_modules') && !qstr.contains(absolutePathAndFileName, '\\.git') && !qstr.contains(absolutePathAndFileName, '\\.vscode')) {
+			absolutePathAndFileName = qstr.replaceAll(absolutePathAndFileName, '\\\\', '\\');
+			if (fs.statSync(absolutePathAndFileName).isDirectory()) {
+				qfil.getSitePathAndFileNames(absolutePathAndFileName, pathAndFileNames);
+			} else {
+				const fixedPathAndFileName = qsys.convertAbsoluteWindowsPathAndFileNameToPathAndFileName(absolutePathAndFileName);
+				pathAndFileNames.push(fixedPathAndFileName);
+			}
+		}
+	}
+	return pathAndFileNames;
+};
+
+
+=====================
+
+
+
+	h2.pageTitle {
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+
+===========================
+
+.main {
+	display: flex;
+	flex-wrap: nowrap;
+
+	width: 100%;
+	a {
+		color: black;
+	}
+}
+
+
+===================
+	"type": "module",
+	
+=====================
+
+
+doesn't work: 
+
+const qstr = require('../qtools/qstr');
+
+module.exports = {
+	capitalizeFirstLetter: (line: string) => {
+		return line.charAt(0).toUpperCase() + line.slice(1);
+	},
+
+	replaceAll: (text: string, search: string, replace: string) => {
+		return text.split(search).join(replace);
+	}
+}
+
+
+===================
+
+const qstr = require('../qtools/qstr');
+
+export function capitalizeFirstLetter (line: string) {
+	return line.charAt(0).toUpperCase() + line.slice(1);
+}
+
+export function replaceAll (text: string, search: string, replace: string) {
+	return text.split(search).join(replace);
+};
+
+//export default { capitalizeFirstLetter, replaceAll };
+
+
+==============================
+
+const qstr = require('../qtools/qstr');
+const qdev = require('../qtools/qdev');
+const Choice = require('../systemClasses/choice.js');
+const Markdown = require("markdown").markdown;
+const OutlineTextParser = require('../systemTextParsers/outlineTextParser');
+const config = require('../system/config');
+
+exports.NEW_LINE = function (numberOfNewLines = 1) {
+	const endOfLine = '\n';
+	return endOfLine.repeat(numberOfNewLines);
+}
+
+exports.TAB = function (numberOfTabs = 1) {
+	const tab = "    "; // 4 spaces
+	return tab.repeat(numberOfTabs);
+}
+
+===========
+
+import moment from 'moment';
+const d = moment(new Date());
+const currentDateTime = d.format('YYYY-MM-DD HH:mm:ss');
+
+=========
+
+.footer {
+	position: fixed;
+	margin-right: 10px;
+	bottom: 0;
+	left: 0;
+	font-size: 0.8em;
+	color: #aaa;
+	font-style: italic;
+	text-align: right;
+	width: 100%;
+	background-color: $frame_background_color;
+	border-top: 1px solid #ccc;
+	height: 38px;
+
+	.innerFooter {
+		margin: 10px 15px 15px 15px;
+	}
+}
+
+======================
+
+					<div className="footer version">
+						<div className="innerFooter">Made with Datapod for React 00.00.06</div>
+					</div>

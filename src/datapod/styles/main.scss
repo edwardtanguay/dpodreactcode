@@ -1,0 +1,56 @@
+$frame_background_color: #ddd;
+$text_muted: #aaa;
+$link_muted: #555;
+
+html,
+body,
+#App,
+#App > div {
+	height: 100%;
+}
+
+.App {
+	text-align: left;
+}
+
+body {
+	background-color: #eee;
+
+	.navbar {
+		.appTitle {
+			color: #555;
+			font-weight: normal;
+		}
+		a.active {
+			font-weight: bold;
+		}
+	}
+
+	.pageContent {
+		padding: 15px 30px;
+		margin: 70px 0 0 0;
+	
+	}
+
+	.footer {
+		background-color: #f8f9fa;
+		height: 2em;
+		padding-top: 0.2em;
+		color: $text_muted;
+		font-size: 0.8em;
+		display: flex;
+		justify-content: space-between;
+		a {
+			color: $link_muted;
+			text-decoration: underline;
+		}
+	
+		.left {
+			padding-left: 10px;
+		}
+	
+		.right {
+			padding-right: 10px;
+		}
+	}
+}

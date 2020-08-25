@@ -1,0 +1,33 @@
+
+.flashcard {
+	margin: 0 0 10px 0;
+	display: flex;
+	justify-content: left;
+
+	.infoArea {
+		margin-left: 5px;
+	}
+
+	.category {
+		text-transform: uppercase;
+	}
+
+	.categoryKind {
+		font-size: 0.75em;
+		color: green;
+	}
+
+	.front {
+		font-weight: normal;
+		font-size: 0.8em;
+	}
+
+	.back {
+		color: brown;
+		font-family: "Courier New", Courier, monospace;
+		font-size: 0.8em;
+		span {
+			background-color: #ddd;
+		}
+	}
+}
